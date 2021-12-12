@@ -1,0 +1,41 @@
+<div fxLayoutAlign="center">
+  <div>
+    <h1 class="catalog-title">{{catalogTitle}}</h1>
+  </div>
+</div>
+
+<div fxLayoutAlign="center center" class="search">
+  <mat-form-field class="example-form-field" appearance="fill">
+    <mat-label>Search by Item name</mat-label>
+    <input matInput type="text" [(ngModel)]="search" (ngModelChange)="doSearch()">
+    <button *ngIf="search" matSuffix mat-icon-button aria-label="Clear" (click)="search=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+
+
+<mat-grid-list cols="{{colAadaptive}}" rowHeight="2:3" (window:resize)="onResize($event)">
+  <mat-grid-tile *ngFor="let dish of this.filtredDishes">
+    <mat-card class="example-card">
+      <mat-card-title-group>
+        <mat-card-title>{{dish.name}}</mat-card-title>
+        <mat-card-subtitle>{{dish.category}}</mat-card-subtitle>
+        <img mat-card-xl-image src="{{dish.image}}" alt="Photo of a Shiba Inu">
+      </mat-card-title-group>
+      <mat-card-content class="text-justify">
+        <p>{{dish.description}}</p>
+      </mat-card-content>
+      <mat-card-actions fxLayoutAlign="center center">
+        <button mat-button color="accent">Price - {{dish.price}} $</button>
+        <button mat-button color="warn">Weight - {{dish.weight}} gr</button>
+        <button mat-mini-fab color="accent" style="font-size: 20px; margin-left: 10px;"
+          (click)="addToBusket(dish)"><mat-icon>plus_one</mat-icon></button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<mat-paginator #paginator [pageSize]="pageSize" [pageSizeOptions]="[9, 12, 15]" [showFirstLastButtons]="true"
+  [length]="totalSize" [pageIndex]="currentPage" (page)="handlePage($event)" aria-label="Select page">
+</mat-paginator>

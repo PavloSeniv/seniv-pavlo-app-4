@@ -1,0 +1,47 @@
+.example-card {
+  margin-bottom: 15px;
+}
+
+.item-name {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.item-category {
+  margin-left: 5px;
+  margin-right: 5px;
+  display: inline-block;
+  color: #7b1fa2;
+}
+.item-price {
+  display: inline-block;
+  color: #69f0ae;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.item-weight {
+  display: inline-block;
+  color: #f44336;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.item-count {
+  display: inline-block;
+  color: yellow;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.text-justify {
+  text-align: justify;
+}
+
+.img-card {
+  width: 100%;
+}
+
+.button-delete {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}

@@ -1,0 +1,36 @@
+.example-card {
+  max-width: 500px;
+  margin   : 10px;
+}
+
+.example-header-image {
+  background-size: cover;
+}
+
+.example-form-field {
+  width : 500px;
+  margin: 10px;
+}
+
+.search {
+  display        : flex;
+  justify-content: end;
+}
+
+.text-justify{
+  text-align: justify;
+}
+
+.catalog-title{
+color: #fff;
+padding-top: 50px;
+}
+
+.mat-paginator-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0 8px;
+    flex-wrap: wrap-reverse;
+    width: 100%;
+}

@@ -1,0 +1,32 @@
+<div *ngIf="!data.length;else templateName" style="text-align: center;">
+  Trash empty!
+</div>
+
+<ng-template #templateName>
+  <mat-card class="example-card" *ngFor="let item of data; index as i">
+     <mat-card-title class="item-name">
+       {{item.dish.name}}
+     </mat-card-title>
+
+    <mat-card-title-group>
+      <img class="img-card" src="{{item.dish.image}}">
+    </mat-card-title-group>
+
+    <mat-card-title-group style="margin-top: 20px;" fxLayoutAlign="center center">
+      <mat-card-subtitle class="item-category">{{item.dish.category}}</mat-card-subtitle>
+      <mat-card-subtitle class="item-price">Price - {{item.dish.price}} $</mat-card-subtitle>
+      <mat-card-subtitle class="item-weight">Weight - {{item.dish.weight}} gr</mat-card-subtitle>
+      <mat-card-subtitle class="item-count">Count - {{item.count}}</mat-card-subtitle>
+    </mat-card-title-group>
+
+    <mat-card-content class="text-justify">
+      {{item.dish.description}}
+      <div class="button-delete">
+        <button  mat-mini-fab color="warn" (click)="removeFromBusket(i)">
+          <mat-icon>delete_forever</mat-icon>
+        </button>
+      </div>
+    </mat-card-content>
+
+  </mat-card>
+</ng-template>
